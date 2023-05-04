@@ -1,6 +1,10 @@
-import { checkAllVowels, checkIfEven } from "./index";
+import {
+  checkAllVowels,
+  checkIfEvenNumber,
+  checkIfIsPrimeNumber,
+} from "./index";
 
-describe("Given a check vowels function", () => {
+describe("Given checkAllVowels function", () => {
   describe("When it receives a word", () => {
     test("Then it should return true", () => {
       const word = "murcielago";
@@ -24,13 +28,13 @@ describe("Given a check vowels function", () => {
   });
 });
 
-describe("Given check even number function", () => {
+describe("Given checkIfEvenNumber function", () => {
   describe("When it receives a even number", () => {
     test("Then it should return true", () => {
       const evenNumber = 4;
       const expectedBoolean = true;
 
-      const check = checkIfEven(evenNumber);
+      const check = checkIfEvenNumber(evenNumber);
 
       expect(check).toBe(expectedBoolean);
     });
@@ -41,7 +45,31 @@ describe("Given check even number function", () => {
       const oddNumber = 3;
       const expectedBoolean = false;
 
-      const check = checkIfEven(oddNumber);
+      const check = checkIfEvenNumber(oddNumber);
+
+      expect(check).toBe(expectedBoolean);
+    });
+  });
+});
+
+describe("Given checkIfIsPrimeNumber function", () => {
+  describe("When it recives a prime number", () => {
+    test("Then it should return true", () => {
+      const primeNumber = 17;
+      const expectedBoolean = true;
+
+      const check = checkIfIsPrimeNumber(primeNumber);
+
+      expect(check).toBe(expectedBoolean);
+    });
+  });
+
+  describe("When it recives a number that is not prime", () => {
+    test("Then it should return false", () => {
+      const notPrimeNumber = 15;
+      const expectedBoolean = false;
+
+      const check = checkIfIsPrimeNumber(notPrimeNumber);
 
       expect(check).toBe(expectedBoolean);
     });
